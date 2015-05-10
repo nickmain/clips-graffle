@@ -1,0 +1,225 @@
+(omnigraffle (root d1)(path "graffle/test.graffle"))
+(dict-entry (id d1)(key Layers)(value a2))
+(dict-entry (id d3)(key Print)(value "YES"))
+(dict-entry (id d3)(key Lock)(value "NO"))
+(dict-entry (id d3)(key Name)(value "Layer 1"))
+(dict-entry (id d3)(key View)(value "YES"))
+(dict-entry (id d1)(key MagnetsVisible)(value "NO"))
+(dict-entry (id d1)(key ModificationDate)(value "2015-05-10 20:41:23 +0000"))
+(dict-entry (id d1)(key SmartDistanceGuidesActive)(value "NO"))
+(dict-entry (id d1)(key ColumnSpacing)(value 36.0))
+(dict-entry (id d1)(key SheetTitle)(value "Canvas 1"))
+(dict-entry (id d1)(key PrintOnePage)(value False))
+(dict-entry (id d1)(key NotesVisible)(value "NO"))
+(dict-entry (id d1)(key AutoAdjust)(value True))
+(dict-entry (id d1)(key Modifier)(value "Nick Main"))
+(dict-entry (id d1)(key RowSpacing)(value 36.0))
+(dict-entry (id d1)(key SmartAlignmentGuidesActive)(value "YES"))
+(dict-entry (id d1)(key BaseZoom)(value 0))
+(dict-entry (id d1)(key GraphicsList)(value a4))
+(dict-entry (id d5)(key Style)(value d6))
+(dict-entry (id d6)(key shadow)(value d7))
+(dict-entry (id d7)(key Draws)(value "NO"))
+(dict-entry (id d6)(key stroke)(value d8))
+(dict-entry (id d8)(key Color)(value d9))
+(dict-entry (id d9)(key r)(value "0.4"))
+(dict-entry (id d9)(key b)(value "0.4"))
+(dict-entry (id d9)(key g)(value "0.4"))
+(dict-entry (id d8)(key TailArrow)(value "0"))
+(dict-entry (id d8)(key Legacy)(value False))
+(dict-entry (id d8)(key HeadArrow)(value "FilledArrow"))
+(dict-entry (id d8)(key LineType)(value 1))
+(dict-entry (id d5)(key Head)(value d10))
+(dict-entry (id d10)(key ID)(value 10))
+(dict-entry (id d5)(key ID)(value 13))
+(dict-entry (id d5)(key Tail)(value d11))
+(dict-entry (id d11)(key ID)(value 3))
+(dict-entry (id d5)(key Points)(value a12))
+(dict-entry (id d5)(key FontInfo)(value d13))
+(dict-entry (id d13)(key Font)(value "Helvetica"))
+(dict-entry (id d13)(key Size)(value 12.0))
+(dict-entry (id d5)(key Class)(value "LineGraphic"))
+(dict-entry (id d14)(key Style)(value d15))
+(dict-entry (id d15)(key shadow)(value d16))
+(dict-entry (id d16)(key Draws)(value "NO"))
+(dict-entry (id d15)(key fill)(value d17))
+(dict-entry (id d17)(key Color)(value d18))
+(dict-entry (id d18)(key r)(value "1"))
+(dict-entry (id d18)(key b)(value "0.602682"))
+(dict-entry (id d18)(key g)(value "0.586677"))
+(dict-entry (id d14)(key Text)(value d19))
+(dict-entry (id d19)(key Text)(value "This is a test"))
+(dict-entry (id d14)(key Bounds)(value a20))
+(dict-entry (id d14)(key Class)(value "ShapedGraphic"))
+(dict-entry (id d14)(key Shape)(value "Circle"))
+(dict-entry (id d14)(key ID)(value 3))
+(dict-entry (id d21)(key Style)(value d22))
+(dict-entry (id d22)(key shadow)(value d23))
+(dict-entry (id d23)(key Draws)(value "NO"))
+(dict-entry (id d22)(key stroke)(value d24))
+(dict-entry (id d24)(key Draws)(value "NO"))
+(dict-entry (id d22)(key fill)(value d25))
+(dict-entry (id d25)(key Draws)(value "NO"))
+(dict-entry (id d21)(key Text)(value d26))
+(dict-entry (id d26)(key Text)(value "This is a demo of processing 
+Omnigraffle diagrams with CLIPS"))
+(dict-entry (id d21)(key Flow)(value "Resize"))
+(dict-entry (id d21)(key Bounds)(value a27))
+(dict-entry (id d21)(key Class)(value "ShapedGraphic"))
+(dict-entry (id d21)(key FontInfo)(value d28))
+(dict-entry (id d28)(key Size)(value 27.0))
+(dict-entry (id d21)(key Wrap)(value "NO"))
+(dict-entry (id d21)(key ID)(value 10))
+(dict-entry (id d21)(key FitText)(value "YES"))
+(dict-entry (id d1)(key HPages)(value 1))
+(dict-entry (id d1)(key DisplayScale)(value "1 in = 1 in"))
+(dict-entry (id d1)(key GuidesLocked)(value "NO"))
+(dict-entry (id d1)(key ActiveLayerIndex)(value 0))
+(dict-entry (id d1)(key GuidesVisible)(value "YES"))
+(dict-entry (id d1)(key RowAlign)(value 1))
+(dict-entry (id d1)(key ApplicationVersion)(value a29))
+(dict-entry (id d1)(key UseEntirePage)(value False))
+(dict-entry (id d1)(key PrintInfo)(value d30))
+(dict-entry (id d30)(key NSLeftMargin)(value a31))
+(dict-entry (id d30)(key NSPaperSize)(value a32))
+(dict-entry (id d30)(key NSTopMargin)(value a33))
+(dict-entry (id d30)(key NSRightMargin)(value a34))
+(dict-entry (id d30)(key NSBottomMargin)(value a35))
+(dict-entry (id d30)(key NSOrientation)(value a36))
+(dict-entry (id d30)(key NSPrintReverseOrientation)(value a37))
+(dict-entry (id d30)(key NSHorizonalPagination)(value a38))
+(dict-entry (id d1)(key FileType)(value "flat"))
+(dict-entry (id d1)(key CanvasOrigin)(value "{0, 0}"))
+(dict-entry (id d1)(key BackgroundGraphic)(value d39))
+(dict-entry (id d39)(key Style)(value d40))
+(dict-entry (id d40)(key stroke)(value d41))
+(dict-entry (id d41)(key Draws)(value "NO"))
+(dict-entry (id d39)(key ID)(value 2))
+(dict-entry (id d39)(key Bounds)(value a42))
+(dict-entry (id d39)(key Class)(value "SolidGraphic"))
+(dict-entry (id d1)(key ImageCounter)(value 1))
+(dict-entry (id d1)(key GraphDocumentVersion)(value 12))
+(dict-entry (id d1)(key LinksVisible)(value "NO"))
+(dict-entry (id d1)(key ColumnAlign)(value 1))
+(dict-entry (id d1)(key Orientation)(value 2))
+(dict-entry (id d1)(key Creator)(value "Nick Main"))
+(dict-entry (id d1)(key LayoutInfo)(value d43))
+(dict-entry (id d43)(key neatoSeparation)(value 0.0))
+(dict-entry (id d43)(key circoSeparation)(value 0.0))
+(dict-entry (id d43)(key circoMinDist)(value 18.0))
+(dict-entry (id d43)(key layoutEngine)(value "dot"))
+(dict-entry (id d43)(key twopiSeparation)(value 0.0))
+(dict-entry (id d43)(key Animate)(value "NO"))
+(dict-entry (id d43)(key neatoLineLength)(value 0.20000000298))
+(dict-entry (id d1)(key VPages)(value 1))
+(dict-entry (id d1)(key OriginVisible)(value "NO"))
+(dict-entry (id d1)(key ReadOnly)(value "NO"))
+(dict-entry (id d1)(key UniqueID)(value 1))
+(dict-entry (id d1)(key PageBreaks)(value "YES"))
+(dict-entry (id d1)(key WindowInfo)(value d44))
+(dict-entry (id d44)(key ZoomValues)(value a45))
+(dict-entry (id d44)(key ShowInfo)(value False))
+(dict-entry (id d44)(key CurrentSheet)(value 0))
+(dict-entry (id d44)(key VisibleRegion)(value a47))
+(dict-entry (id d44)(key Frame)(value a48))
+(dict-entry (id d44)(key SidebarWidth)(value 0))
+(dict-entry (id d44)(key TopSlabHeight)(value 250.0))
+(dict-entry (id d44)(key Zoom)(value 0.907942238267))
+(dict-entry (id d44)(key FitInWindow)(value True))
+(dict-entry (id d44)(key Sidebar)(value False))
+(dict-entry (id d44)(key Expanded_Canvases)(value a49))
+(dict-entry (id d1)(key CreationDate)(value "2015-05-07 18:20:15 +0000"))
+(dict-entry (id d1)(key GridInfo)(value d50))
+(dict-entry (id d50)(key SnapsToGrid)(value "YES"))
+(dict-entry (id d1)(key KeepToScale)(value False))
+(dict-entry (id d1)(key MasterSheets)(value a51))
+(array (id a20)(values 
+306.0
+378.0
+108.0
+81.0
+))
+(array (id a32)(values 
+"size"
+"{792, 612}"
+))
+(array (id a31)(values 
+"float"
+"18"
+))
+(array (id a38)(values 
+"coded"
+"BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG"
+))
+(array (id a37)(values 
+"coded"
+"BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG"
+))
+(array (id a36)(values 
+"coded"
+"BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwGG"
+))
+(array (id a35)(values 
+"float"
+"40"
+))
+(array (id a27)(values 
+174.5
+120.0
+411.0
+76.0
+))
+(array (id a29)(values 
+"com.omnigroup.OmniGraffle6"
+"161.5.0.232794"
+))
+(array (id a12)(values 
+"{360, 418.5}"
+"{380, 158}"
+))
+(array (id a49)(values 
+))
+(array (id a51)(values 
+))
+(array (id a46)(values 
+"Canvas 1"
+0.0
+1.0
+))
+(array (id a33)(values 
+"float"
+"18"
+))
+(array (id a34)(values 
+"float"
+"18"
+))
+(array (id a2)(values 
+d3
+))
+(array (id a42)(values 
+0.0
+0.0
+756.0
+554.0
+))
+(array (id a4)(values 
+d5
+d14
+d21
+))
+(array (id a45)(values 
+a46
+))
+(array (id a48)(values 
+222.0
+397.0
+692.0
+600.0
+))
+(array (id a47)(values 
+-1.8986083499
+0.0
+761.061630219
+554.0
+))

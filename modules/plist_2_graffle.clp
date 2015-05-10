@@ -1,155 +1,3 @@
-(defmodule MAIN (export ?ALL))
-
-;; -----------------------------------------------------------------------------------
-;; Fact templates for PLists
-;; -----------------------------------------------------------------------------------
-(defmodule PLIST
-    (export deftemplate ?ALL))
-
-(deftemplate PLIST::file-error "An error when loading a file"
-    (slot path (type STRING)(default ?NONE))
-    (slot msg  (type STRING)(default ?NONE)))
-
-(deftemplate PLIST::plist-error "An error when parsing a PList"
-    (slot path (type STRING)(default ?NONE))
-    (slot msg  (type STRING)(default ?NONE)))
-
-(deftemplate PLIST::omnigraffle "An Omnigraffle PList"
-    (slot root (type SYMBOL)(default ?NONE))  ; id of root dictionary
-    (slot path (type STRING)(default ?NONE)))
-
-(deftemplate PLIST::dict-entry "An entry in a PList dictionary"
-    (slot id    (type SYMBOL)(default ?NONE)) 
-    (slot key   (type LEXEME)(default ?NONE))
-    (slot value (default ?NONE)))
-
-(deftemplate PLIST::array "A PList array"
-    (slot id (type SYMBOL)(default ?NONE)) 
-    (multislot values))
-
-;; -----------------------------------------------------------------------------------
-;; Graffle Model Fact Templates
-;; -----------------------------------------------------------------------------------
-
-(defmodule GRAFFLE    
-    (export deftemplate ?ALL))
-
-(deftemplate GRAFFLE::graffle "root of a graffle document"
-    (slot id   (type SYMBOL)(default ?NONE))
-    (slot path (type STRING))
-    (multislot sheets (type SYMBOL)(cardinality 1 ?VARIABLE)))
-
-(deftemplate GRAFFLE::sheet "page of a graffle document"
-    (slot parent (type SYMBOL)(default ?NONE))
-    (slot id     (type SYMBOL)(default ?NONE))    
-    (slot title  (type STRING)(default ?NONE)))
-
-(deftemplate GRAFFLE::graphic-parent "link between graphic and its parent"
-    (slot parent  (type SYMBOL)(default ?NONE))
-    (slot graphic (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::group "a group graphic"
-    (slot id (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::subgraph "a subgraph group graphic"
-    (slot id    (type SYMBOL)(default ?NONE))
-    (slot shape (type SYMBOL)(default ?NONE))) ; the background shape
-
-(deftemplate GRAFFLE::shape "a shape graphic"
-    (slot id   (type SYMBOL)(default ?NONE))
-    (slot type (type LEXEME)(default ?NONE)))
-
-(deftemplate GRAFFLE::line "a line graphic"
-    (slot id (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::table "a table group graphic"
-    (slot id (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::rows "the rows of a table"
-    (slot id (type SYMBOL)(default ?NONE)) ; table id
-    (multislot cells (type SYMBOL)(cardinality 1 ?VARIABLE))) ; the cells of each row
-
-(deftemplate GRAFFLE::cols "the columns of a table"
-    (slot id (type SYMBOL)(default ?NONE)) ; table id
-    (multislot cells (type SYMBOL)(cardinality 1 ?VARIABLE))) ; the cells of each column
-
-(deftemplate GRAFFLE::cells "the cells of a row or column"
-    (slot id (type SYMBOL)(default ?NONE)) 
-    (multislot shapes (type SYMBOL)(cardinality 1 ?VARIABLE))) ; the shape ids
-
-(deftemplate GRAFFLE::bounds "the bounds of a shape"
-    (slot id (type SYMBOL)(default ?NONE)) ; shape id
-    (slot x  (type NUMBER))
-    (slot y  (type NUMBER))
-    (slot w  (type NUMBER))
-    (slot h  (type NUMBER)))
-
-(deftemplate GRAFFLE::shape-text "the text of a shape"
-    (slot id   (type SYMBOL)(default ?NONE)) ; shape id
-    (slot text (type STRING)))
-
-(deftemplate GRAFFLE::fill-color "the color of a shape"
-    (slot id (type SYMBOL)(default ?NONE)) ; shape id
-    (slot r  (type NUMBER))
-    (slot g  (type NUMBER))
-    (slot b  (type NUMBER)))
-
-(deftemplate GRAFFLE::stroke-color "the stroke color of a shape or line"
-    (slot id (type SYMBOL)(default ?NONE)) ; shape/line id
-    (slot r  (type NUMBER))
-    (slot g  (type NUMBER))
-    (slot b  (type NUMBER)))
-
-(deftemplate GRAFFLE::dashed "indicates that a shape or line has a dashed stroke"
-    (slot id (type SYMBOL)(default ?NONE))) ; shape/line id
-
-(deftemplate GRAFFLE::line-label "indicates a shape used as a line label"
-    (slot line  (type SYMBOL)(default ?NONE)) ; line id
-    (slot shape (type SYMBOL)(default ?NONE)) ; shape id
-    (slot posn  (type NUMBER))) ; position of label (0 =< posn <= 1)
-    
-(deftemplate GRAFFLE::head-arrow "arrow type for line"
-    (slot id   (type SYMBOL)(default ?NONE)) ; line id
-    (slot type (type LEXEME)(default ?NONE)))
-
-(deftemplate GRAFFLE::tail-arrow "arrow type for line"
-    (slot id   (type SYMBOL)(default ?NONE)) ; line id
-    (slot type (type LEXEME)(default ?NONE)))
-
-(deftemplate GRAFFLE::meta-notes "notes metadata for a graphic or sheet"
-    (slot id    (type SYMBOL)(default ?NONE)) ; graphic or sheet id
-    (slot notes (type STRING)(default ?NONE)))
-
-(deftemplate GRAFFLE::meta-prop "property metadata for a graphic or sheet"
-    (slot id    (type SYMBOL)(default ?NONE)) ; graphic or sheet id
-    (slot key   (type LEXEME)(default ?NONE))
-    (slot value))
-
-(deftemplate GRAFFLE::connection "connection from a shape or line to another graphic"
-    (slot from (type SYMBOL)(default ?NONE)) ; shape or line id
-    (slot to   (type SYMBOL)(default ?NONE)) ; target graphic id
-    (slot end  (allowed-symbols head tail))) ; which end of the shape/line is connected
-
-(deftemplate GRAFFLE::link "hyperlink from a graphic to a sheet"
-    (slot from  (type SYMBOL)(default ?NONE))  ; origin id
-    (slot sheet (type SYMBOL)(default ?NONE))) ; target sheet id
-
-(deftemplate GRAFFLE::overlaps "indicates that a top-level shape overlaps another"
-    (slot id1 (type SYMBOL)(default ?NONE)) 
-    (slot id2 (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::contains "indicates that a top-level shape contains another"
-    (slot outer (type SYMBOL)(default ?NONE)) 
-    (slot inner (type SYMBOL)(default ?NONE)))
-
-(deftemplate GRAFFLE::leave-plist "requests that PLIST facts should not be cleaned up")
-
-(deftemplate GRAFFLE::no-containment "requests that overlaps/contains facts not be determined")
-
-(deftemplate GRAFFLE::verbose-containment 
-    "requests that contains facts between all ancestors/descendants remain - otherwise
-     they are cleaned up, leaving only parent/child relationships")
-
 ;; -----------------------------------------------------------------------------------
 ;; Rules for converting PLIST facts into OmniGraffle model facts
 ;; -----------------------------------------------------------------------------------
@@ -226,7 +74,7 @@
     (make-graphic ?sheet ?id)
     (dict-entry (id ?id)(key Notes)(value ?notes))
     =>
-    (assert (meta-notes (id ?id)(notes (rtf->plain ?notes)))))
+    (assert (meta-notes (id ?id)(notes ?notes))))
 
 (defrule PLIST->GRAFFLE::graphic-property
     (make-graphic ?sheet ?id)
@@ -239,7 +87,7 @@
     (dict-entry (id ?sheet)(key BackgroundGraphic)(value ?bgg))
     (dict-entry (id ?bgg)(key Notes)(value ?notes))
     =>
-    (assert (meta-notes (id ?sheet)(notes (rtf->plain ?notes)))))
+    (assert (meta-notes (id ?sheet)(notes ?notes))))
 
 (defrule PLIST->GRAFFLE::sheet-property
     (dict-entry (id ?sheet)(key BackgroundGraphic)(value ?bgg))
@@ -253,20 +101,23 @@
     (dict-entry (id ?id)(key Class)(value "ShapedGraphic"))
     (dict-entry (id ?id)(key Shape)(value ?type))    
     (dict-entry (id ?id)(key Bounds)(value ?bounds))
+    (array (id ?bounds)(values ?x ?y ?w ?h))
     =>
     (assert (shape (id ?id)(type ?type)))
-    (bind ?rect (string->rect ?bounds))
-    (assert (bounds (id ?id)(x (nth$ 1 ?rect))
-                            (y (nth$ 2 ?rect))
-                            (w (nth$ 3 ?rect))
-                            (h (nth$ 4 ?rect)))))
+    (assert (bounds (id ?id)(x ?x)(y ?y)(w ?w)(h ?h))))
+
+(defrule PLIST->GRAFFLE::default-graphic-shape-type
+    (dict-entry (id ?id)(key Class)(value "ShapedGraphic"))
+    (not (dict-entry (id ?id)(key Shape)(value ?type)))
+    =>
+    (assert (dict-entry (id ?id)(key Shape)(value "Rectangle"))))
     
 (defrule PLIST->GRAFFLE::make-graphic-text
     (make-graphic ?sheet ?id)
     (dict-entry (id ?id)(key Text)(value ?txt-id))    
     (dict-entry (id ?txt-id)(key Text)(value ?text))
     =>
-    (assert (shape-text (id ?id)(text (rtf->plain ?text)))))
+    (assert (shape-text (id ?id)(text ?text))))
 
 (defrule PLIST->GRAFFLE::shape-fill-color
     (make-graphic ?sheet ?id)
@@ -465,6 +316,7 @@
     (graphic-parent (parent ?sheet)(graphic ?id2&:(neq ?id2 ?id1)))
     (bounds (id ?id1)(x ?x1)(y ?y1)(w ?w1)(h ?h1))
     (bounds (id ?id2)(x ?x2)(y ?y2)(w ?w2)(h ?h2))
+    (not (overlaps (id1 ?id2)(id2 ?id1)))  ;; ensure one direction
     (test (overlaps ?x1 ?y1 ?w1 ?h1 ?x2 ?y2 ?w2 ?h2))
     =>
     (assert (overlaps (id1 ?id1)(id2 ?id2))))
@@ -508,6 +360,14 @@
     =>
     (retract ?r)
     (retract ?nc))
+
+(defrule PLIST->GRAFFLE::prune-overlap-when-contains
+    (declare (salience -1000))
+    (or (contains (outer ?p1)(inner ?p2))
+        (contains (outer ?p2)(inner ?p1)))
+    ?overlaps <- (overlaps (id1 ?p1)(id2 ?p2))
+    =>
+    (retract ?overlaps))
 
 ;; -----------------------------------------------------------------------------------
 ;; Clean up
